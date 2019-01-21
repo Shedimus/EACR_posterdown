@@ -1,5 +1,7 @@
 # Copied from the original posterdown repository as edits made by me to the package are unsuitable for a pull request. This has been altered to produce the poster presented by Shea Connell at the 2019 EACR Tracking Cancer conference.
 
+Most of the modification come about from the requirement for an image prior to the two-column format being started, augmenting the template.tex file that **posterdown** uses to build the final formatted poster.
+
 ## Installation
 
 You can install and use this modified **posterdown** from github using the `devtools` package as seen below.
