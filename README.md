@@ -1,3 +1,39 @@
+# Copied from the original posterdown repository as edits made by me to the package are unsuitable for a pull request. This has been altered to produce the poster presented by Shea Connell at the 2019 EACR Tracking Cancer conference.
+
+## Installation
+
+You can install and use this modified **posterdown** from github using the `devtools` package as seen below.
+
+```r
+
+devtools::install_github("Shedimus/posterdown")
+
+```
+
+### Instructions if you have never used RMarkdown
+
+1. Install `devtools` package
+
+    ```r
+    install.packages("devtools")
+    ```
+
+2. Install `posterdown` from github repo
+
+    ```r
+    devtools::install_github("Shedimus/posterdown")
+    ```
+
+3. Install `tinytex`Latex libraries:
+
+    ```r
+    tinytex::install_tinytex()
+    ```
+
+    _**NOTE** This will take some time to load the LaTex Packages but is the best option (in my opinion) for keeping your Latex library as small as possible. After the first download of these libraries you will not need to do this again. To confirm that Tinytex is properly installed use: `tinytex:::is_tinytex()` and you should get a value of `TRUE` in the console._
+    
+    _**NOTE** If you have conflicting versions of Latex (i.e. tinytex and MacTex), you could have problems rendering your poster. You may need to uninstall all versions, then start over by installing posterdown and tinytex from scratch._ 
+
 # posterdown
 
 <img src="posterdown_hexlogo1.png" alt="poster logo" align="right" width = "25%" height="25%"/>
@@ -15,39 +51,6 @@ To this:
 
 Please feel free to give me feedback or requests for changes in the [issues](https://github.com/brentthorne/posterdown/issues) page. I am currently finishing up my Master's degree so I will have limited time to work on updating this package in the next few months but nevertheless I will do what I can! :smile: 
 
-## Installation
-
-You can install and use **posterdown** from github using the `devtools` package as seen below.
-
-```r
-
-devtools::install_github("brentthorne/posterdown")
-
-```
-
-### Instructions if you have never used RMarkdown
-
-1. Install `devtools` package
-
-    ```r
-    install.packages("devtools")
-    ```
-
-2. Install `posterdown` from github repo
-
-    ```r
-    devtools::install_github("brentthorne/posterdown")
-    ```
-
-3. Install `tinytex`Latex libraries:
-
-    ```r
-    tinytex::install_tinytex()
-    ```
-
-    _**NOTE** This will take some time to load the LaTex Packages but is the best option (in my opinion) for keeping your Latex library as small as possible. After the first download of these libraries you will not need to do this again. To confirm that Tinytex is properly installed use: `tinytex:::is_tinytex()` and you should get a value of `TRUE` in the console._
-    
-    _**NOTE** If you have conflicting versions of Latex (i.e. tinytex and MacTex), you could have problems rendering your poster. You may need to uninstall all versions, then start over by installing posterdown and tinytex from scratch._ 
 
 ## Overview
 
@@ -61,10 +64,6 @@ To use **posterdown** from RStudio:
 
 2. Install the **posterdown** package: 
 
-    ```r    
-    devtools::install_github("brentthorne/posterdown")
-    ```
-    
 3. Use the **New R Markdown** dialog to create a conference poster from the templates
 
     ![New R Markdown](posterdown_picture.png)
@@ -103,32 +102,3 @@ YAML header options have been created to provide more freedom in design (i.e. co
 ### Markdown Customization
 
 As you add content to your RMarkdown file, you will notice that the output pdf will fill in columns from left to right, and from top to bottom within columns. If you have more content for your poster than space is available on the default poster, it will spill onto a second page. If this occurs, you can try adding more columns and decreasing the font size (both in the YAML header) to make it work. Or, of course, edit the content to make it shorter. :smile:
-
-## Using posterdown outside of RStudio
-
-1. Install [pandoc](http://pandoc.org) using the [instructions for your platform](https://github.com/rstudio/rmarkdown/blob/master/PANDOC.md).
-
-2. Install the **rmarkdown** and **posterdown** packages:
-
-    ```r
-    devtools::install_github("brentthorne/posterdown")
-    ```
-
-3. Use the `rmarkdown::draft()` function to create articles:
-
-    ```r
-    rmarkdown::draft("MyPoster.Rmd", template = "posterdown_pdf", package = "posterdown")
-    ```
-    
-## To Do List (When Not Writing my Master's Thesis)
-
-- [x] ~~Support for changing the size of the poster~~
-- [ ] Support for Natbib
-- [ ] Support for nbib from PubMed
-- [ ] Support for logo placement in the title bar section of poster
-- [ ] Gradient colour options
-- [ ] True YAML multi-author/ multi-affiliation support
-- [ ] Toggle citation section on/off as per user's choice
-- [x] ~~Make colour options standardized (probably hex colours if possible)~~
-- [ ] Allow users to choose colour options from a palette??
-- [ ] Fill/style Section headings if user wishes
